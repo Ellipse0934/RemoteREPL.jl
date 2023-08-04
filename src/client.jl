@@ -338,7 +338,7 @@ function run_remote_repl_command(conn, out_stream, cmdstr)
             # Help mode
             cmd = (:help, magic[2])
         elseif magic[1] == "%module"
-		mod_ex = Symbol(Meta.parse(magic[2]))
+            mod_ex = Symbol(Meta.parse(magic[2]))
             cmd = (:in_module, mod_ex)
         elseif magic[1] == "%include"
             cmd = (:eval, parse_and_replace_includes(magic[2]))
